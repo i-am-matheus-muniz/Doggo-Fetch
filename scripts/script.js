@@ -22,7 +22,15 @@
     function getMultipleChoices(n, correctAnswer, array) {
         // Use a while loop and the getRandomElement() function
         // Make sure there are no duplicates in the array
-
+        const choices = [];
+        choices.push(correctAnswer);
+        while(choices.length < n){
+            let newChoice = getRandomElement(possibleChoices);
+            if(!choices.includes(newChoice)) {
+                choices.push(newChoice);
+            }
+        }
+        return shuffleArray(choices);
     }
 
     
